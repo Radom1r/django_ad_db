@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Article, Scope
+from .models import Article, Scope, Tag
 
 
 class ScopeInline(admin.TabularInline):
@@ -9,3 +9,7 @@ class ScopeInline(admin.TabularInline):
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
     inlines = [ScopeInline, ]
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    ...
